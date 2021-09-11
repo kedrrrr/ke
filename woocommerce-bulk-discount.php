@@ -268,7 +268,7 @@ if ( !class_exists( 'Woo_Bulk_Discount_Plugin_t4m' ) ) {
 				return $price; // no price modification
 			}
 			$new_css = esc_attr( get_option( 'woocommerce_t4m_css_new_price', 'color: #4AB915; font-weight: bold;' ) );
-			$bulk_info = sprintf( __( ' Скидка ',' %s ', 'wc_bulk_discount' ), ( get_option( 'woocommerce_t4m_discount_type', '' ) == 'flat' || get_option( 'woocommerce_t4m_discount_type', '' ) == 'fixed' ? get_woocommerce_currency_symbol() . $coeff : ( round( ( 1 - $coeff ) * 100, 2 ) . "%" ) ) );
+			$bulk_info = sprintf( __( 'Incl. %s discount', 'wc_bulk_discount' ), ( get_option( 'woocommerce_t4m_discount_type', '' ) == 'flat' || get_option( 'woocommerce_t4m_discount_type', '' ) == 'fixed' ? get_woocommerce_currency_symbol() . $coeff : ( round( ( 1 - $coeff ) * 100, 2 ) . "%" ) ) );
 
 			return "<span class='discount-info' title='$bulk_info'>" .
 			"<span>$price</span>" .
@@ -350,7 +350,7 @@ if ( !class_exists( 'Woo_Bulk_Discount_Plugin_t4m' ) ) {
 				return $price; // no price modification
 			}
 			$new_css = esc_attr( get_option( 'woocommerce_t4m_css_new_price', 'color: #4AB915; font-weight: bold;' ) );
-			$bulk_info = sprintf( __( ' Скидка ',' %s ', 'wc_bulk_discount' ), ( $discount_type == 'flat' || $discount_type == 'fixed' ? get_woocommerce_currency_symbol( $currency = 'грн.' ) . $coeff : ( round( ( 1 - $coeff ) * 100, 2 ) . "%" ) ) );
+			$bulk_info = sprintf( __( 'Incl. %s discount', 'wc_bulk_discount' ), ( $discount_type == 'flat' || $discount_type == 'fixed' ? get_woocommerce_currency_symbol() . $coeff : ( round( ( 1 - $coeff ) * 100, 2 ) . "%" ) ) );
 
 			return "<span class='discount-info' title='$bulk_info'>" .
 			"<span>$price</span>" .
